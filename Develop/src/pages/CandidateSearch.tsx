@@ -56,7 +56,7 @@ const CandidateSearch = () => {
           Login: {currentCandidate.login}
         </h2>
         <p>
-          Name: {currentCandidate.name}
+          Name: {currentCandidate.name || "Unavailable"}
         </p>
         <p>
           Location: {currentCandidate.location || "Unavailable"}

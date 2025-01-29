@@ -29,7 +29,7 @@ export default function SavedCandidates() {
               Login: {candidate.login}
             </h2>
             <p>
-              Name: {candidate.name}
+              Name: {candidate.name || "Unavailable"}
             </p>
             <p>
               Location: {candidate.location || "Unavailable"}
