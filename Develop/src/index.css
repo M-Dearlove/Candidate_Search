@@ -96,25 +96,86 @@ tbody tr:nth-child(odd) {
 
 .nav {
   display: flex;
-  justify-content: flex-start;
-  padding: 1em 2em;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .nav-item {
   padding: 0 0.5rem;
   list-style: none;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .nav-link {
   color: #fff;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .active {
   font-weight: 700;
+  color: coral;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.potential-candidates {
+  text-align: center;
+  padding: 1rem;
+  color: white;
+}
+
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.choices button {
+  border: 1px solid black;
+  color: white;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  font-size: 20pt;
 }
 
 .table {
   width: 80vw;
   table-layout: fixed;
+}
+
+.card h2 {
+  color: white;
+  font-weight: bold;
+}
+
+.card p {
+  text-decoration: underline;
+  font-weight: bold;
+  color: white;
 }

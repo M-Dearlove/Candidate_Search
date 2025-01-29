@@ -1,49 +1,23 @@
-import { CSSProperties } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../index.css';
 
 export default function Nav() {
-  // TODO: Add necessary code to display the navigation bar and link between the pages
-  const location = useLocation();
-
-  const linkStyle: CSSProperties = {
-    padding: '5px',
-    color: 'white',
-    fontSize: '16pt',
-  };
-
-  const activeLinkStyle: CSSProperties = {
-    ...linkStyle,
-    color: 'coral',
-  };
-
-  const navItems = [
-    { path: '../pages/CandidateSearch', label: 'Home' },
-    { path: '../pages/SavedCandidates', label: 'Potential Candidates' }
-  ];
-
-  const sectionStyle: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    padding: '1rem',
-    margin: '0 auto'
-  };
-
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    isActive ? 'active' : 'nav-link';
   return (
-    <nav>
-      <section style={sectionStyle}>
-        {navItems.map(({ path, label }) => (
-          <div key={path}>
-            <Link
-              to={path}
-              style={location.pathname === path ? activeLinkStyle : linkStyle}
-            >
-              {label}
-            </Link>
+    <div>
+      <nav className='nav'>
+          <div className='nav-item'>
+            <NavLink to='/' className={getNavLinkClass}>
+              Home
+            </NavLink>
           </div>
-        ))}
-      </section>
-    </nav>
-  )
+          <div className='nav-item'>
+            <NavLink to='/SavedCandidates' className={getNavLinkClass}>
+              Potential Candidate List
+            </NavLink>
+          </div >
+      </nav >
+    </div >
+  );
 };
